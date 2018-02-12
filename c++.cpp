@@ -27,7 +27,7 @@ system("Color D");
 
 int tam, i = 0;
 
-cout << "Distancia eu eucliana entre dois vetores."
+cout << "Distancia eu eucliana entre dois vetores\n\n----------------------\n\n";
 
 cout << "Digite o tamanho dos vetores:";
 cin >> tam;
@@ -35,11 +35,11 @@ cin >> tam;
 float *v1 = 0;
 float *v2 = 0;
 
-v1 = (float*)malloc(tam * sizeof(float));
-v2 = (float*)malloc(tam * sizeof(float));
+v1 = new float[tam];
+v2 = new float[tam];
 
 while(i <= tam-1){
-    cout << "\nDigite o " << i+1 << "º elemento referente ao primeiro vetor: ";
+    cout << "\nDigite o " << i+1 << "Âº elemento referente ao primeiro vetor: ";
     cin >>  v1[i];
     i++;
 }
@@ -47,12 +47,15 @@ while(i <= tam-1){
 i = 0;
 
 while(i <= tam-1){
-    cout << "\n\nDigite o " << i+1 << "º elemento referente ao segundo vetor: ";
+    cout << "\n\nDigite o " << i+1 << "Âº elemento referente ao segundo vetor: ";
     cin >>  v2[i];
     i++;
 }
 
-cout << "O resultado é: " << euclidiana(tam, v1, v2);
+cout << "\nA distancia Ã©: " << euclidiana(tam, v1, v2);
+
+delete(v1);
+delete(v2);
 
 
 return 0;
